@@ -6,7 +6,7 @@
     <title>@yield('title')</title>
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/app.css" rel="stylesheet">
+    <link href="{{ css/app.css }}" rel="stylesheet">
 </head>
 <body>
     @include('inc.header')
@@ -15,7 +15,7 @@
         @endif
         
     <div class="container mt-5">
-        @include('inc.messages')
+        @include('inc.errors')
         <div class="row">
             <div class="col-9">
                 @yield('content')

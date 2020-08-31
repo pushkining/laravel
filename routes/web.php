@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 })->name('home');
 
@@ -29,8 +29,10 @@ Route::get('/blog', function () {
     return view('blog'); 
 })->name('blog');
 
-Route::get('/contact/all', 'ContactController@allData' )->name('contact-data');
+Route::get('/contact/all/{id}/update', 'ContactController@updateMessage')->name('contact-update');
+Route::get('/contact/all/{id}', 'ContactController@allData')->name('contact-data-one');
+Route::get('/contact/all', 'ContactController@all')->name('contact-all');
 Route::post('/contact/submit', 'ContactController@submit' )->name('contact-form');
-// Route::post('/pushkin/shop/public/contact/submit', function () {
+// Route::post('/contact/submit', function () {
 //     dd(Request::all());
 // })->name('contact-form');
